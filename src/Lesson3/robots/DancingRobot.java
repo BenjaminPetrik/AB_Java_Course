@@ -1,4 +1,4 @@
-package Lesson3_1;
+package Lesson3.robots;
 
 public abstract class DancingRobot {
     public String getDefaultDanceType() {
