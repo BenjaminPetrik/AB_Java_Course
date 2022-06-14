@@ -1,5 +1,5 @@
 package Lesson3.square;
-
+@Deprecated
 public class Square extends Rectangle {
 
     public Square(double a) {
