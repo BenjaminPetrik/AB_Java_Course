@@ -1,11 +1,10 @@
-package Lesson3;
+package unit3;
 
-import Lesson3.square.Circle;
-import Lesson3.square.Rectangle;
-import Lesson3.square.Shape;
-import Lesson3.square.Square;
+import unit3.square.Circle;
+import unit3.square.Rectangle;
+import unit3.square.Shape;
+import unit3.square.Square;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 
 public class Runner {
@@ -16,6 +15,7 @@ public class Runner {
 
 
         var circleClass = Circle.class;
+        circleClass.getMethods()[1].getModifiers();
 
         System.out.println(circleClass.getName());
         System.out.println(circleClass.getSimpleName());
@@ -32,7 +32,7 @@ public class Runner {
 
         System.out.println("=============================");
 
-        Class<?> aClass = Class.forName(args[0]);
+        Class<?> aClass = Class.forName(circleClass.getName());
         var shape =
                 (Shape) aClass.getDeclaredConstructor(double.class)
                         .newInstance(10.0);

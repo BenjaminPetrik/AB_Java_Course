@@ -1,4 +1,4 @@
-package Lesson2;
+package unit2;
 
 public class EmployeePrinter implements Printer{
 

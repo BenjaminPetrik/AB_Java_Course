@@ -1,4 +1,4 @@
-package Lesson3.square;
+package unit3.square;
 
 public class Polygon implements Shape {
     private final double[] lengths;

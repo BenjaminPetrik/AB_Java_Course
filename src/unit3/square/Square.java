@@ -1,4 +1,4 @@
-package Lesson3.square;
+package unit3.square;
 @Deprecated
 public class Square extends Rectangle {
 

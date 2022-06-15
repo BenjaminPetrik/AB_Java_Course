@@ -1,11 +1,11 @@
-package Lesson3;
+package unit3;
 
-import Lesson3.robots.DancingRobot;
-import Lesson3.robots.RealRobot1;
-import Lesson3.robots.RealRobot2;
-import Lesson3.square.Circle;
-import Lesson3.square.Rectangle;
-import Lesson3.square.Square;
+import unit3.robots.DancingRobot;
+import unit3.robots.RealRobot1;
+import unit3.robots.RealRobot2;
+import unit3.square.Circle;
+import unit3.square.Rectangle;
+import unit3.square.Square;
 
 import java.util.Arrays;
 

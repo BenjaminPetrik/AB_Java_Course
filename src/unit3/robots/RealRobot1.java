@@ -1,4 +1,4 @@
-package Lesson3.robots;
+package unit3.robots;
 
 public class RealRobot1 extends DancingRobot{
 
