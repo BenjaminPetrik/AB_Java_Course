@@ -47,4 +47,29 @@ public class Employee {
         return obj instanceof Employee && (( Employee ) obj).firstName.equals( this.firstName ) &&
                 (( Employee ) obj).lastName.equals( this.lastName );
     }
+
+    public void work() { //делаем метод, который заставляет сотрудников работать
+        for (int i = 0; i < 10; i++) {
+            System.out.println(firstName + " " + lastName + " works: " + i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public int compute() { // какое-то вычисление
+        int result = 1;
+        for ( int i = 1; i < 20; i++) {
+             result *= i;
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+
 }

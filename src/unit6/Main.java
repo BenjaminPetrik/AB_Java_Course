@@ -41,7 +41,7 @@ public class Main {
         addToList(new Employee("Alesha", "Susani", 30, "AQA", POSITION.SENIOR), employeeLinkedList);
         addToList(new Employee("Alesha", "Susan", 30, "AQA", POSITION.JUNIOR), employeeLinkedList);
         addToList(new Employee("Alesha", "Susa", 30, "AQA", POSITION.SENIOR), employeeLinkedList);
-        addToList(new Employee("Gleb", "Popov", 31, "AQA", POSITION.JUNIOR), employeeLinkedList);
+        addToList(new Employee("Gleb", "Popov", 31, "Dev", POSITION.JUNIOR), employeeLinkedList);
 
         int juniorCount = 0;
         int middleCount = 0;
@@ -59,9 +59,11 @@ public class Main {
 
         for ( Map.Entry<POSITION, Integer> entry : counter.entrySet() ) {
             System.out.println("Position: " + entry.getKey() + " counter: " + entry.getValue());
+            System.out.println("=================================");
         }
 
         System.out.println("Position counter: " + counter);
+        System.out.println("=================================");
 
         for (Employee employee : employeeLinkedList ) {
             if (employee.position == POSITION.JUNIOR ) {
@@ -76,6 +78,7 @@ public class Main {
         System.out.println("Junior count " + juniorCount);
         System.out.println("Middle count " + middleCount);
         System.out.println("Senior count " + seniorCount);
+        System.out.println("=================================");
 
         for (int index = 0; index < employeeList.size()-1; index++) {
             if ( employeeList.get ( index ).position.ordinal() > employeeList.get ( index + 1 ).position.ordinal() ) {
@@ -90,7 +93,40 @@ public class Main {
         }*/
 
         System.out.println( employeeList );
+        System.out.println("=================================");
         System.out.println( employeeLinkedList );
+        System.out.println("=================================");
+
+        /*for ( Employee employee : employeeLinkedList) {
+            employee.work();
+        }*/
+
+        Map<String, Integer> team = new HashMap<>();
+        for (Employee employee : employeeLinkedList) {
+            if ( !team.containsKey(employee.team)) {
+                team.put(employee.team, 1);
+            } else {
+                team.put(employee.team, team.get(employee.team)+1);
+            }
+        }
+        for ( Map.Entry<String, Integer> entry : team.entrySet() ) {
+            System.out.println("There are " + entry.getValue() + " people in the " + entry.getKey() + " team.");
+            System.out.println("=================================");
+        }
+
+        Map<String, Integer> name = new HashMap<>();
+        for (Employee employee : employeeLinkedList) {
+            if ( !name.containsKey(employee.firstName)) {
+                name.put(employee.firstName, 1);
+            } else {
+                name.put(employee.firstName, name.get(employee.firstName)+1);
+            }
+        }
+        for ( Map.Entry<String, Integer> entry : name.entrySet() ) {
+            System.out.println("There are " + entry.getValue() + " people with name " + entry.getKey() );
+            System.out.println("=================================");
+        }
+
     }
     public static void addToList ( Employee employee, List<Employee> employeeList ) {
         if (!employeeList.contains(employee) )
