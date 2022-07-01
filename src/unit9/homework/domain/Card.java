@@ -5,12 +5,25 @@ public class Card {
     private final String cardNumber;
 
     public Card(String fullName, String cardNumber) {
-        // TODO: 1) Add validation that fullName is not null
-        // TODO: 2) Add validation that cardNumber is non-null
+        // TODO_done: 1) Add validation that fullName is not null
+        // TODO_done: 2) Add validation that cardNumber is non-null
         // throw NullPointerException if validation fails
-        // TODO: Optional: Validate that cardNumber contain exactly 8 digits. And throw some unchecked exception if it invalid
-        this.fullName = fullName;
-        this.cardNumber = cardNumber;
+        // TODO_done: Optional: Validate that cardNumber contain exactly 8 digits.
+        //  And throw some unchecked exception if it invalid
+        if (fullName != null) {
+            this.fullName = fullName;
+        } else {
+            throw new NullPointerException("FullName should not be null!");
+        }
+        if (cardNumber == null) {
+            throw new NullPointerException("Card number should not be null!");
+        } else if (cardNumber.length() != 8){
+            throw new IllegalArgumentException("Card number should equal exactly 8 chars!");
+        } else {
+            this.cardNumber = cardNumber;
+        }
+
+
     }
 
     public String getFullName() {

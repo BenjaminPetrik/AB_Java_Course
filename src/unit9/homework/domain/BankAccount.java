@@ -5,12 +5,23 @@ public class BankAccount {
     private final String iban;
     private final Card owner;
 
-    // TODO: add null checks for params
-    // TODO: Optional: check that iban contain exactly 15 symbols and throw unchecked exception otherwise
+    // TODO_done: add null checks for params
+    // TODO_done: Optional: check that iban contain exactly 15 symbols and throw unchecked exception otherwise
     public BankAccount(Money money, String iban, Card card) {
-        this.money = money;
-        this.iban = iban;
-        this.owner = card;
+        if (money != null && iban != null && card != null) {
+            this.money = money;
+            this.owner = card;
+            if (iban.length() == 15) {
+                this.iban = iban;
+            } else {
+                throw new IllegalArgumentException("IBAN should equal exactly 15 chars");
+            }
+        } else {
+            throw new NullPointerException("Money, IBAN and card should not be null!");
+        }
+
+
+
     }
 
     public String getIban() {
