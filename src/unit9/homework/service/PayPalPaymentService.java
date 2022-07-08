@@ -14,20 +14,20 @@ public class PayPalPaymentService implements PaymentService {
         // 2) validate source, target and amount has the same currency
         // 3) validate source has enough money to withdraw
 
-        if (source != null && target != null && amount != null){
-            if (amount.getCurrency() == source.getMoney().getCurrency() && amount.getCurrency()
-                    == target.getMoney().getCurrency()) {
-                if (source.getMoney().getAmount() >= amount.getAmount()) {
-                    source.withdraw(amount);
-                    target.receive(amount);
-                } else {
-                    throw new NotEnoughMoneyException();
-                }
-            } else {
-                throw new InvalidCurrencyException();
-            }
-        } else {
+        if (source == null || target == null || amount == null) {
             throw new MoneyTransferException("Source, target or amount is null!");
+        }
+
+        if (amount.getCurrency() != source.getMoney().getCurrency() || amount.getCurrency()
+                != target.getMoney().getCurrency()) {
+            throw new InvalidCurrencyException();
+        }
+
+        if (source.getMoney().getAmount() >= amount.getAmount()) {
+            source.withdraw(amount);
+            target.receive(amount);
+        } else {
+            throw new NotEnoughMoneyException();
         }
     }
 }
