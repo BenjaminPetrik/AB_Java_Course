@@ -13,15 +13,15 @@ import java.util.Map;
 public class FilesReader {
     public void read() throws FileNotFoundException {
         System.out.println("\r\n" + "==========TASK 2==========");
-        File[] files = new File("./src/unit10/homework/Employees").listFiles();
+        File[] files = new File("./src/unit10/homework/Employee").listFiles();
         String info = "";
         byte[] data;
         Employee employee;
         if (files == null){
-            throw new NullPointerException("No files in the directory!");
+            throw new NullPointerException("Wrong path!");
         }
         if ( files.length == 0 ){
-            throw new FileNotFoundException("There is an empty file!");
+            throw new FileNotFoundException("There is an empty folder!");
         }
 
         for (File file : files) {
