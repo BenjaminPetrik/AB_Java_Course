@@ -13,7 +13,7 @@ import java.util.Map;
 public class FilesReader {
     public void read() throws FileNotFoundException {
         System.out.println("\r\n" + "==========TASK 2==========");
-        File[] files = new File("./src/unit10/homework/Employee").listFiles();
+        File[] files = new File("./src/unit10/homework/Employees").listFiles();
         String info = "";
         byte[] data;
         Employee employee;
